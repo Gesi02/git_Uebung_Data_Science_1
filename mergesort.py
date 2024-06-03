@@ -1,5 +1,5 @@
 def assign_value(new_list, i, old_list, j):                                 # ASSIGNMENT() umbennnen: function names should be snake_case and all lowercase
-     """Weist den Wert von alte_liste[j] der neue_liste[i] zu."""           # docstring hinzufügen, um Funktion zu erklären
+    """Weist den Wert von alte_liste[j] der neue_liste[i] zu."""           # docstring hinzufügen, um Funktion zu erklären
     new_list[i] = old_list[j]
 
 
