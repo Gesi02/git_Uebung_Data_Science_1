@@ -1,5 +1,5 @@
 def assign_value(new_list, i, old_list, j):                                 # ASSIGNMENT() umbennnen: function names should be snake_case and all lowercase
-     """Weist den Wert von alte_liste[j] der neue_liste[i] zu."""           # docstring hinzufügen, um Funktion zu erklären
+    """Weist den Wert von alte_liste[j] der neue_liste[i] zu."""            # docstring hinzufügen, um Funktion zu erklären
     new_list[i] = old_list[j]
 
 
@@ -50,9 +50,24 @@ import matplotlib.pyplot as plt
 
 my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 x = range(len(my_list))
-plt.plot(x, my_list)
-plt.show()
-mergeSort(my_list)
-x = range(len(my_list))
-plt.plot(x, my_list)
+figure, axis = plt.subplots(1,2, figsize=(12, 6))
+
+# Ungeordnete Liste plotten
+axis[0].bar(x, my_list, label='Ungeordnete Liste', color='lime')
+axis[0].set_title('Liste vorm Sortieren')
+axis[0].set_xlabel('Listeneintrag')
+axis[0].set_ylabel('Wert')
+axis[0].legend()
+
+# Merge Sort auf die Liste anwenden
+merge_sort(my_list)
+
+# Geordnete Liste plotten
+axis[1].bar(x, my_list, label='Geordnete Liste', color='magenta')
+axis[1].set_title('Liste nach Sortieren mit Merge Sort')
+axis[1].set_xlabel('Listeneintrag')
+axis[1].set_ylabel('Wert')
+axis[1].legend()
+
+plt.tight_layout()
 plt.show()
